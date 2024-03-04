@@ -40,10 +40,30 @@ body, html {
     padding-top: 20px;
 }
 
+@keyframes slide {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(100%); }
+}
+
+.icon-animation {
+    display: inline-block;
+    animation: slide 10s linear infinite;
+    font-size: 2rem;
+    position: fixed; /* Stellt sicher, dass die Animation unabhängig vom Scrollen immer sichtbar ist */
+    bottom: 20px; /* Positioniert die Animation am unteren Rand des Bildschirms */
+    width: 100%; /* Stellt sicher, dass die Animation die volle Breite einnimmt */
+    text-align: center; /* Zentriert die Symbole innerhalb der Animation */
+}
+
 /* Media Queries für zusätzliche Anpassungen bei kleineren Bildschirmgrößen */
 @media (max-width: 768px) {
-    #timer {
-        font-size: 1.2rem;
+    #timer span {
+        font-size: 2rem; /* Kleinere Schriftgröße auf mobilen Geräten */
     }
-
-    #
+    #timer {
+        font-size: 1rem; /* Kleinere Schriftgröße für den Timer-Text */
+    }
+    .icon-animation {
+        font-size: 1.5rem; /* Kleinere Symbole auf mobilen Geräten */
+    }
+}
